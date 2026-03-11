@@ -26,8 +26,8 @@ public class CameraMovement : MonoBehaviour
 
     void MouseLook()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * mouseSensitivity;
+        float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * mouseSensitivity;
 
         xRot -= mouseY;
         xRot = Mathf.Clamp(xRot, minY, maxY);
